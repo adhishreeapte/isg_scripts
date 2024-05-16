@@ -1,0 +1,14 @@
+[
+  {
+    "sym_file" : "Symbol_file_isg_assist_codebase.sym",
+    "trace_file" : "firetrace.trc",
+    "vertical_speed_jump" : 550,
+    "jump_time_duration" : 0.03,
+    "idling_speed" : 1500,
+    "m_speed" : "Bemf_Speed_RPM",
+    "operation_mode" : "MEAS_OPMODE",
+    "battery_current" : "IDC_Estimated",
+    "battery_voltage" : "Vbat",
+    "u_theta" : "MEAS_UTHETA"
+  }
+  ]

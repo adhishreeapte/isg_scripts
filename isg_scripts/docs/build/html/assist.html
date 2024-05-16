@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assist &mdash; ISG Scripts Documentation v2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Speedtime" href="speedtime.html" />
+    <link rel="prev" title="Deadtrace" href="deadtrace.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ISG Scripts Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="firetrace.html">Firetrace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deadtrace.html">Deadtrace</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Assist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="speedtime.html">Speedtime</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ISG Scripts Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Assist</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/assist.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="assist">
+<h1>Assist<a class="headerlink" href="#assist" title="Permalink to this heading"></a></h1>
+<p>The following command is used to analyse assist and charging efficiency taken from PCAN.
+The trace files contains charging or assist.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;begin_time&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">24</span><span class="p">],</span>
+    <span class="s2">&quot;end_time&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>
+    <span class="s2">&quot;Rs&quot;</span> <span class="p">:</span> <span class="mf">33.5</span><span class="p">,</span>
+    <span class="s2">&quot;sym_file&quot;</span> <span class="p">:</span> <span class="s2">&quot;Symbol_file_isg_assist_codebase.sym&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;trace_file&quot;</span> <span class="p">:</span> <span class="s2">&quot;assist_test_24nov.trc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;battery_current&quot;</span> <span class="p">:</span> <span class="s2">&quot;IDC_Estimated&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;battery_voltage&quot;</span> <span class="p">:</span> <span class="s2">&quot;Vbat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;assist_state&quot;</span> <span class="p">:</span> <span class="s2">&quot;Assist_State&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ia&quot;</span> <span class="p">:</span> <span class="s2">&quot;IA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ib&quot;</span> <span class="p">:</span> <span class="s2">&quot;IB&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ic&quot;</span> <span class="p">:</span> <span class="s2">&quot;IC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;charge_state&quot;</span> <span class="p">:</span> <span class="s2">&quot;Charging_State&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;a_or_c&quot;</span> <span class="p">:</span> <span class="s2">&quot;a&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Example set of config, trace, and <code class="docutils literal notranslate"><span class="pre">.sym</span></code> files are <a class="reference external" href="_static/files/assist/assistconfig.json">config.json</a>, <a class="reference external" href="_static/files/assist_test_24nov.trc">trace.trc</a> and <a class="reference external" href="_static/files/Symbol_file_isg_assist_codebase.sym">symbol.sym</a>.</p>
+<p>Command below is used to analyse trace taken from PCAN.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Command</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>isg.assist<span class="w"> </span>--config<span class="w"> </span>assist.json
+</pre></div>
+</div>
+</div>
+<p>Description of config.json file:</p>
+<ul class="simple">
+<li><p>“sym_file” : Name of PCAN <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+<li><p>“trace_file” : Name of <code class="docutils literal notranslate"><span class="pre">.trc</span></code> file</p></li>
+<li><p>“begin_time” : Speed jump in RPM at fire point. Motor-engine specific.</p></li>
+<li><p>“end_time” : Time in seconds required to achieve “vertical_speed_jump” at fire point.</p></li>
+<li><p>“Rs” : Phase resistance in mOhm of the motor</p></li>
+<li><p>“a_or_c” : Assist “a” or charging mode “c”</p></li>
+<li><p>“operation_mode” : Op_mode variable name in <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+<li><p>“battery_current” : Ibat variable name in <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+<li><p>“battery_voltage” : Vbat variable name in <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+<li><p>“assist_state” : Assist state variable name in <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+<li><p>“charge_state” : Charging state variable name in <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+<li><p>“ia” : Phase current A in <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+<li><p>“ib” : Phase current B in <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+<li><p>“ic” : Phase current C in <code class="docutils literal notranslate"><span class="pre">.sym</span></code> file</p></li>
+</ul>
+<p>Energy from battery:</p>
+<ul class="simple">
+<li><p>e_bat = Vbat.Ibat.t</p></li>
+</ul>
+<p>Copper loss:</p>
+<ul class="simple">
+<li><p>e_loss = Rs.(ia^2 + ib^2 + ic^2)t</p></li>
+</ul>
+<p>Efficiency:</p>
+<ul>
+<li><p>Charging-</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>eta = -1*e_bat/(-1*e_bat + e_loss)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Assist-</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>eta = 1 - (e_loss/e_bat)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>Voltage ripple, efficiency, energy from battery and copper loss values are printed on command line.
+Sample output is in figure below :</p>
+<img alt="_images/assist_output.png" src="_images/assist_output.png" />
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="deadtrace.html" class="btn btn-neutral float-left" title="Deadtrace" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="speedtime.html" class="btn btn-neutral float-right" title="Speedtime" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sedemac RnD.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

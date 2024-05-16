@@ -1,0 +1,12 @@
+[
+  {
+    "sym_file" : "Symbol_file_isg_assist_codebase.sym",
+    "trace_file" : "true_dead_cranks_v13.trc",
+    "m_speed" : "Bemf_Speed_RPM",
+    "operation_mode" : "MEAS_OPMODE",
+    "battery_current" : "IDC_Estimated",
+    "battery_voltage" : "Vbat",
+    "u_theta" : "MEAS_UTHETA",
+    "ia" : "IA"
+  }
+  ]

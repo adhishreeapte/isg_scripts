@@ -1,0 +1,72 @@
+=========
+Deadtrace
+=========
+
+Deadtraces are taken with sparkplug removed. 
+Example ``config.json`` file is shown below:
+
+.. code-block:: bash
+
+    {
+    "sym_file" : "Symbol_file_isg_assist_codebase.sym",
+    "trace_file" : "true_dead_cranks_v13.trc",
+    "m_speed" : "Bemf_Speed_RPM",
+    "operation_mode" : "MEAS_OPMODE",
+    "battery_current" : "IDC_Estimated",
+    "battery_voltage" : "Vbat",
+    "u_theta" : "MEAS_UTHETA",
+    "ia" : "IA"
+    }
+
+
+Example set of config, ``trace_file``, and ``sym_file`` files are `config.json <_static/files/deadtrace/deadconfig.json>`_, `trace.trc <_static/files/deadtrace/deadtrace.trc>`_ and `symbol.sym <_static/files/Symbol_file_isg_assist_codebase.sym>`_. 
+
+
+Command below is used to analyse deadtrace taken from PCAN. 
+
+
+.. code-block:: bash
+    :caption: Command
+
+    isg.deadtrace --config deadconfig.json
+
+
+
+Description of config.json file:
+
+* "sym_file" : Name of PCAN ``.sym`` file
+* "trace_file" : Name of ``trace`` file
+* "m_speed" : Speed variable name in ``.sym`` file
+* "operation_mode" : Op_mode variable name in ``.sym`` file
+* "battery_current" : Ibat variable name in ``.sym`` file
+* "battery_voltage" : Vbat variable name in ``.sym`` file
+* "u_theta" : U_theta variable name in ``.sym`` file
+* "ia" : Phase current variable name in ``.sym`` file
+
+
+Description of script:
+
+* Script calculates reverse bang time based on utheta. 
+* Sci-py is used to find compression times to isolate thermodynamic cycles. 
+* Statistics of power drawn from the battery, battery-current, battery-voltage and energy consumed per cycle are generated. 
+* At every compression, current drawn from battery is maximum and battery voltage dips to a minimum. 
+* Thus, statistics include maximum, mean of ibat and minimum, mean of vbat.
+
+
+Figure output is placed in folder named ``isg_plots`` created at the location of terminal initiation. 
+A sample subset of the output-figures is shown below.
+
+.. image:: _static/images/deadtrace_vbat.png
+
+
+.. image:: _static/images/deadtrace_ibat.png
+
+
+.. image:: _static/images/deadtrace_power.png
+
+
+.. image:: _static/images/deadtrace_energy.png
+
+
+
+Text-output include line rms maximum and average written in ``deadtrace_output.csv`` file at terminal location. 

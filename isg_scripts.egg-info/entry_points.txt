@@ -1,0 +1,5 @@
+[console_scripts]
+isg.assist = isg_scripts.assist:cli
+isg.deadtrace = isg_scripts.deadtrace.deadtrace:cli
+isg.firetrace = isg_scripts.firetrace.firetrace:cli
+isg.speedtime = isg_scripts.speedtime.speedtime:cli

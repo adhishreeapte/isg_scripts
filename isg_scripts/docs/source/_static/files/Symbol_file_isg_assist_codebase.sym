@@ -1,0 +1,194 @@
+FormatVersion=5.0 // Do not edit this line!
+Title="Untitled"
+
+{SEND}
+
+[OVERRIDE_DQ]
+ID=510h
+DLC=8
+Var=CAL_DQ_OVERRIDE unsigned 8,8 /p:2 -m /f:0.01
+Var=CAL_OVERRIDEN_UD signed 16,8
+Var=CAL_OVERRIDEN_UQ signed 24,8
+Var=CAL_OVERRIDE_CRANK_SWITCH unsigned 32,8
+Var=CAL_OVERRIDE_ASSIST_SWITCH unsigned 40,8
+Var=Override_bemfreset unsigned 48,8
+
+[OVERRIDE_PID]
+ID=570h	
+DLC=8
+Var=CAL_FW_UTHETA_KP unsigned 0,16 
+Var=CAL_FW_UTHETA_KI unsigned 16,16 /f:0.01
+Var=CAL_CHARGING_KP unsigned 32,16 /f:0.01
+Var=CAL_CHARGING_KI unsigned 48,16 /f:0.01
+
+[OVERRIDE_Bemf]
+ID=571h	
+DLC=8
+Var=CAL_BEMF_W0 signed 0,16 /f:0.01
+Var=CAL_BEMF_ZETA signed 16,16 /f:0.01
+Var=CAL_TRACK_W0 signed 32,16 /f:0.01
+Var=CAL_TRACK_ZETA signed 48,16 /f:0.01
+
+{RECEIVE}
+
+[S1]
+ID=0D1h
+DLC=8
+Var=Bemf_Speed_RPM signed 0,16
+Var=Phase_Error signed 16,8 /f:2
+Var=BHspin_L unsigned 24,8 /f:2
+Var=GrandState unsigned 40,8
+Var=BHspin_eTheta_Deg signed 32,8 /f:2
+Var=Error_Code unsigned 48,8
+Var=BHspin_Speed_RPM signed 56,8 /f:20
+
+[S2]
+ID=0D2h
+DLC=8
+Var=IA signed 16,16 /f:0.01
+Var=U_Q signed 0,8
+Var=U_D signed 8,8
+Var=IB signed 32,16 /f:0.01
+Var=IC signed 48,16 /f:0.01
+
+[S3]
+ID=0D3h	
+DLC=8
+Var=FAULT_CODE unsigned 24,16
+Var=MEAS_DC unsigned 40,8
+Var=MEAS_OPMODE unsigned 48,8
+Var=MEAS_OBSV_STATE unsigned 61,2
+Var=MEAS_IDSS_SMD_STATE unsigned 0,8
+Var=CAL_OVERRIDEN_UD signed 8,8
+Var=CAL_OVERRIDEN_UQ unsigned 16,8 /f:0.01
+Var=Frequecy_mode unsigned 60,1 /o:1
+Var=AidBEMF unsigned 56,1
+Var=AidBHspin unsigned 57,1
+Var=BHspinEnable unsigned 58,1
+Var=DualSampling unsigned 59,1
+
+[S4]
+ID=0D4h
+DLC=8
+Var=MEAS_TQ_SETPOINT float 0,32 /f:0.01 
+Var=Vbat signed 32,16 /f:0.01 
+Var=Charging_State unsigned 48,3
+Var=CLL_State unsigned 51,2
+Var=Cranking_State unsigned 53,3
+Var=Assist_State unsigned 56,8
+
+[S5]
+ID=0D5h
+DLC=8
+Var=IDC_Estimated signed 0,16	
+Var=ISE_Cmd unsigned 16,8
+Var=MEAS_UAMP unsigned 24,8
+Var=MEAS_UTHETA signed 32,16
+Var=MEAS_TQ_ESTIMATED signed 48,16 /f:0.02
+
+[S6]
+ID=0D6h
+DLC=8
+Var=MEAS_ID signed 0,16 /f:0.01
+Var=MEAS_IQ signed 16,16 /f:0.01
+Var=ControlMode signed 32,8 /f:0.1
+Var=BatHealth unsigned 40,8
+Var=BangBangState unsigned 48,8
+Var=ES_Switch unsigned 59,3
+Var=IDSS_Start_Cmd unsigned 56,3
+Var=KickStart unsigned 63,1
+
+[DEBUG_TEMP]
+ID=0D9h
+DLC=8
+Var=MEAS_DA unsigned 24,8
+Var=MEAS_DB unsigned 32,8
+Var=MEAS_DC unsigned 40,8
+Var=MEAS_OPMODE unsigned 48,8
+Var=MEAS_OBSV_STATE unsigned 56,8
+Var=MEAS_BEMF_STABILITY_STATE unsigned 0,8
+Var=MEAS_BEMF_EQ signed 8,16 /f:0.01
+
+[debug_temp_bemf]
+ID=0E1h
+DLC=8
+Var=Bemf_Speed_RPM signed 0,16
+Var=Phase_Error signed 16,8 /f:2
+Var=bemf_Ialpha signed 24,8 /f:0.5
+Var=bemf_Ibeta signed 32,8 /f:0.5
+Var=bemf_Ualpha signed 40,8
+Var=bemf_Ubeta signed 48,8
+Var=bemf_reset unsigned 56,8
+
+[debug_temp_bemf2]
+ID=0E2h
+DLC=8
+Var=bemf_ed signed 0,8 /f:0.1
+Var=svm_Ubeta signed 8,8
+Var=Stability_smd_statte unsigned 16,8
+Var=bhspin_L unsigned 24,8 /f:2
+Var=bhspin_etheta signed 32,8 /f:2
+Var=grand_state unsigned 40,8
+Var=error_code unsigned 48,8
+Var=bemf_eq signed 56,8 /f:0.1
+
+[BatHealthCalc]
+ID=0D7h
+DLC=8
+Var=VB_RB_Ratio unsigned 0,16 /f:0.01
+Var=VbatCorrected unsigned 16,16 /f:0.001
+
+[fASTcan]
+ID=0D8h
+DLC=8
+Var=FAST_UTHETA signed 32,16
+Var=FAST_VBAT signed 0,16 /f:0.01
+Var=FAST_TQ_SETPOINT signed 16,16 /f:0.02
+Var=FAST_MCLtime unsigned 48,16
+
+[ISE]
+ID=0C0h
+DLC=8
+Var=ISE_eTheta_deg signed 48,16
+
+[EMS]
+ID=300h
+DLC=8
+Var=TPS unsigned 0,8 /f:0.5
+Var=Engine_Speed unsigned 8,16 -m
+
+[EMS500]
+ID=500h
+DLC=8
+Var=Engine_Temp unsigned 16,8 /o:-40
+Var=Vehicle_Speed unsigned 0,16 -m /f:0.1
+
+[ISG_TX600]
+ID=600h
+DLC=8
+Var=Assist_Switch unsigned 7,1
+
+[softver]
+ID=0C1h
+DLC=8
+Var=Var1 unsigned 56,8
+
+[Current_Voltage]
+ID=0DAh
+DLC=8
+Var=Current_Sum float 0,32
+Var=Voltage_Sum float 32,32
+
+{SENDRECEIVE}
+
+[ISG_to_EMS]
+ID=303h
+DLC=8
+Var=Engine_Stop_Cmd unsigned 49,1
+Var=Brake_Switch bit 48,1
+
+[test_ems]
+ID=301h
+DLC=8
+Var=TPS unsigned 0,8 /f:0.5
+

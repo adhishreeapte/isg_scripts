@@ -1,0 +1,17 @@
+[
+  {
+    "begin_time" : [11, 54, 24],
+    "end_time" : [11, 54, 25],
+    "Rs" : 33.5,
+    "sym_file" : "Symbol_file_isg_assist_codebase.sym",
+    "trace_file" : "assist_test_24nov.trc",
+    "battery_current" : "IDC_Estimated",
+    "battery_voltage" : "Vbat",
+    "assist_state" : "Assist_State",
+    "ia" : "IA",
+    "ib" : "IB",
+    "ic" : "IC",
+    "charge_state" : "Charging_State",
+    "a_or_c" : "a"
+  }
+]
